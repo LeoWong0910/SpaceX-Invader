@@ -9,6 +9,8 @@ public class GameStart extends GameApplication {
         settings.setTitle(GameConfig.Title);
         settings.setHeight(GameConfig.HEIGHT);
         settings.setWidth(GameConfig.WIDTH);
+
+        settings.setAppIcon(GameConfig.ICON);
     }
 
     public static void main(String[] args) {
