@@ -6,9 +6,9 @@ import com.almasb.fxgl.app.GameSettings;
 public class GameStart extends GameApplication {
     @Override
     protected void initSettings(GameSettings settings) {
-        settings.setTitle("SpaceX Invader");
-        settings.setHeight(650);
-        settings.setWidth(450);
+        settings.setTitle(GameConfig.Title);
+        settings.setHeight(GameConfig.HEIGHT);
+        settings.setWidth(GameConfig.WIDTH);
     }
 
     public static void main(String[] args) {
