@@ -1,5 +1,7 @@
 package com.ood.spacexinvader;
 
+import com.almasb.fxgl.time.LocalTimer;
+
 public class GameConfig {
     public static final String Title= "SpaceX Invader";
     public static final int HEIGHT = 600;
@@ -7,6 +9,7 @@ public class GameConfig {
     public static final double SPEED = 5f;
     public static final double BULLET_SPEED = 300f;
     public static final int BULLET_SIZE = 6;
+    public static LocalTimer shootTimer;
     public static final int PLAYER_SIZE = 100;
 
     public static boolean isMoving;
