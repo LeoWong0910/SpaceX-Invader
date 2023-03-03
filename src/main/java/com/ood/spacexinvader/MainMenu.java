@@ -8,11 +8,6 @@ import com.almasb.fxgl.core.util.EmptyRunnable;
 import com.almasb.fxgl.dsl.FXGL;
 import javafx.geometry.Point2D;
 import javafx.scene.control.Button;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Shape;
-import javafx.scene.control.Label;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.Shape;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
