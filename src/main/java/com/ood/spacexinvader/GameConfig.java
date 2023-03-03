@@ -5,5 +5,7 @@ public class GameConfig {
     public static final int HEIGHT = 600;
     public static final int WIDTH = 450;
 
-    public static final String ICON = "spacex-invader-favicon-black.png";
+    //follow by the FXGL structure.
+    public static final String ICON = "icon/spacex-invader-favicon-black.png";
+    public static final String PLAYER_IMAGE = "player/SpaceX.png";
 }
