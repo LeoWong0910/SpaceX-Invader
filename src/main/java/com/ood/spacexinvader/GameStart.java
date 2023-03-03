@@ -12,7 +12,6 @@ import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.components.CollidableComponent;
 import com.almasb.fxgl.input.UserAction;
 import com.almasb.fxgl.physics.CollisionHandler;
-import com.almasb.fxgl.physics.HitBox;
 import javafx.geometry.Point2D;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
@@ -81,7 +80,7 @@ public class GameStart extends GameApplication {
                         if (FXGL.getWorldProperties().getInt("hp") <= 0){
                             player.removeFromWorld();
                         }
-                        FXGL.getWorldProperties().increment("hp",-1);;
+                        FXGL.getWorldProperties().increment("hp",-1);
                     }
                 });
     }
@@ -115,11 +114,11 @@ public class GameStart extends GameApplication {
             @Override
             protected void onAction() {
 //                System.out.println("Biu Biu Biu~");
-
                 //Limit bullet shoot time
                 if (!shootTimer.elapsed(shootDelay)) return;
                 shootTimer.capture();
 
+                FXGL.play("bullet.wav");
                 //Test Bullet
                 FXGL.entityBuilder()
                         .at(player.getCenter().getX() - 4, player.getCenter().getY() - 50)
@@ -163,7 +162,7 @@ public class GameStart extends GameApplication {
     @Override
     protected void initGameVars(Map<String, Object> vars) {
         vars.put("score",0);
-        vars.put("hp",20);
+        vars.put("hp",3);
     }
 
     @Override
