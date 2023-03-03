@@ -26,20 +26,25 @@ public class MainMenu extends FXGLMenu {
         super(MenuType.MAIN_MENU);
 
         Text welcome = new Text("Welcome to our game");
-        welcome.setTranslateX(165);
+        welcome.setTranslateX(160);
         welcome.setTranslateY(225);
 
-        Button btn_start = new Button("Start new game");
-        btn_start.setTranslateX(170);
-        btn_start.setTranslateY(250);
-        btn_start.setOnAction(e -> getController().startNewGame());
+        Button btn_newStart = new Button("Start new game");
+        btn_newStart.setTranslateX(170);
+        btn_newStart.setTranslateY(250);
+        btn_newStart.setOnAction(e -> fireNewGame());
+
+        Button btn_continue = new Button("Continue");
+        btn_continue.setTranslateX(185);
+        btn_continue.setTranslateY((280));
+        btn_continue.setOnAction(e -> fireContinue());
 
         Button btn_exit = new Button("Exit");
         btn_exit.setTranslateX(200);
-        btn_exit.setTranslateY((280));
+        btn_exit.setTranslateY((310));
         btn_exit.setOnAction(e -> fireExit());
 
-        getContentRoot().getChildren().addAll(welcome, btn_start, btn_exit);
+        getContentRoot().getChildren().addAll(welcome, btn_newStart, btn_continue, btn_exit);
         getContentRoot().setScaleX(0);
         getContentRoot().setScaleY(0);
 
