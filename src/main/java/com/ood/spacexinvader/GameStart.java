@@ -85,7 +85,7 @@ public class GameStart extends GameApplication {
 //                System.out.println("Biu Biu Biu~");
 
                 //Limit bullet shoot time
-                if (!shootTimer.elapsed(Duration.seconds(0.25))) return;
+                if (!shootTimer.elapsed(shootDelay)) return;
                 shootTimer.capture();
 
                 //Test Bullet
