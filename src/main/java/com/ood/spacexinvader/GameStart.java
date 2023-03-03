@@ -20,7 +20,7 @@ public class GameStart extends GameApplication {
         settings.setWidth(WIDTH);
         settings.setAppIcon(ICON);
 
-//        settings.setMainMenuEnabled(true);
+        settings.setMainMenuEnabled(true);
         settings.setSceneFactory(new SceneFactory() {
             @Override
             public FXGLMenu newMainMenu() {
