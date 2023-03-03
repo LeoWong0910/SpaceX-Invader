@@ -13,6 +13,7 @@ import javafx.geometry.Point2D;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.util.Duration;
 
 import static com.ood.spacexinvader.GameConfig.*;
 
@@ -42,6 +43,7 @@ public class GameStart extends GameApplication {
     private Entity player;
     @Override
     protected void initGame() {
+        shootTimer = FXGL.newLocalTimer();
         player = FXGL.entityBuilder()
                 .type(EntityType.PLAYER)
                 .at((WIDTH - PLAYER_SIZE) / 2  , HEIGHT - PLAYER_SIZE )
@@ -81,6 +83,11 @@ public class GameStart extends GameApplication {
             @Override
             protected void onAction() {
 //                System.out.println("Biu Biu Biu~");
+
+                //Limit bullet shoot time
+                if (!shootTimer.elapsed(Duration.seconds(0.25))) return;
+                shootTimer.capture();
+
                 //Test Bullet
                 FXGL.entityBuilder()
                         .at(player.getCenter().getX() - 4, player.getCenter().getY() - 50)
