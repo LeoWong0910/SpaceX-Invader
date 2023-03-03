@@ -1,46 +1,51 @@
 package com.ood.spacexinvader;
-
 import com.almasb.fxgl.animation.Animation;
 import com.almasb.fxgl.animation.Interpolators;
 import com.almasb.fxgl.app.scene.FXGLMenu;
 import com.almasb.fxgl.app.scene.MenuType;
 import com.almasb.fxgl.core.util.EmptyRunnable;
 import com.almasb.fxgl.dsl.FXGL;
+import com.almasb.fxgl.ui.FontType;
 import javafx.geometry.Point2D;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
+import static com.ood.spacexinvader.GameConfig.HEIGHT;
+import static com.ood.spacexinvader.GameConfig.WIDTH;
 
 public class MainMenu extends FXGLMenu {
 
     private static final int size = 150;
-
+    Image BI = new Image("assets/textures/background/bg.jpeg");
     private Animation<?> animation;
+
     public MainMenu() {
         super(MenuType.MAIN_MENU);
 
-        Text welcome = new Text("Welcome to our game");
-        welcome.setTranslateX(160);
-        welcome.setTranslateY(225);
+        Text txtWelcome = FXGL.getUIFactoryService().newText("Welcome to our game", Color.WHITE, FontType.GAME, 27.0);
 
-        Button btn_newStart = new Button("Start new game");
-        btn_newStart.setTranslateX(170);
-        btn_newStart.setTranslateY(250);
-        btn_newStart.setOnAction(e -> fireNewGame());
+        Button btnNewStart = new Button("Start new game");
+        btnNewStart.setTranslateY(40);
+        btnNewStart.setOnAction(e -> fireNewGame());
 
-        Button btn_continue = new Button("Continue");
-        btn_continue.setTranslateX(185);
-        btn_continue.setTranslateY((280));
-        btn_continue.setOnAction(e -> fireContinue());
+        Button btnContinue = new Button("Continue");
+        btnContinue.setTranslateY(70);
+        btnContinue.setOnAction(e -> fireContinue());
 
-        Button btn_exit = new Button("Exit");
-        btn_exit.setTranslateX(200);
-        btn_exit.setTranslateY((310));
-        btn_exit.setOnAction(e -> fireExit());
+        Button btnExit = new Button("Exit");
+        btnExit.setTranslateY(100);
+        btnExit.setOnAction(e -> fireExit());
 
-        getContentRoot().getChildren().addAll(welcome, btn_newStart, btn_continue, btn_exit);
-        getContentRoot().setScaleX(0);
+        Rectangle bg = new Rectangle(WIDTH, HEIGHT);
+        bg.setFill(new ImagePattern(BI));
+
+        getContentRoot().getChildren().addAll(new StackPane(bg, txtWelcome, btnNewStart, btnContinue, btnExit));
         getContentRoot().setScaleY(0);
 
         animation = FXGL.animationBuilder()
