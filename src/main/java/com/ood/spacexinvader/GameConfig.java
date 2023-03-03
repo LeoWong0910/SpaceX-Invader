@@ -9,6 +9,7 @@ public class GameConfig {
     public static final int WIDTH = 450;
     public static final double SPEED = 5f;
     public static final double BULLET_SPEED = 300f;
+    public static final double ENEMY_SPEED = 20f;
     public static final int BULLET_SIZE = 6;
     public static LocalTimer shootTimer;
     public static Duration shootDelay = Duration.seconds(0.25);
