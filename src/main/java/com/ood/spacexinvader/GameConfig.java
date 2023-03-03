@@ -1,6 +1,7 @@
 package com.ood.spacexinvader;
 
 import com.almasb.fxgl.time.LocalTimer;
+import javafx.util.Duration;
 
 public class GameConfig {
     public static final String Title= "SpaceX Invader";
@@ -10,6 +11,7 @@ public class GameConfig {
     public static final double BULLET_SPEED = 300f;
     public static final int BULLET_SIZE = 6;
     public static LocalTimer shootTimer;
+    public static Duration shootDelay = Duration.seconds(0.25);
     public static final int PLAYER_SIZE = 100;
 
     public static boolean isMoving;
