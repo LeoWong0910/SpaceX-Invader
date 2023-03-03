@@ -14,10 +14,16 @@ public class MainMenu extends FXGLMenu {
         welcome.setTranslateX(165);
         welcome.setTranslateY(225);
 
-        Button button1 = new Button("Start new game");
-        button1.setTranslateX(165);
-        button1.setTranslateY(250);
+        Button btn_start = new Button("Start new game");
+        btn_start.setTranslateX(170);
+        btn_start.setTranslateY(250);
+        btn_start.setOnAction(e -> getController().startNewGame());
 
-        getContentRoot().getChildren().addAll(welcome, button1);
+        Button btn_exit = new Button("Exit");
+        btn_exit.setTranslateX(200);
+        btn_exit.setTranslateY((280));
+        btn_exit.setOnAction(e -> getController().exit());
+
+        getContentRoot().getChildren().addAll(welcome, btn_start, btn_exit);
     }
 }
