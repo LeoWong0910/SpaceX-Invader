@@ -36,33 +36,33 @@ public class PauseMenu extends FXGLMenu {
 
         shape.setStrokeWidth(2.5);
         shape.strokeProperty().bind(
-                Bindings.when(shape.hoverProperty()).then(Color.YELLOW).otherwise(Color.BLACK)
+                Bindings.when(shape.hoverProperty()).then(Color.BLUE).otherwise(Color.BLACK)
         );
 
         shape.fillProperty().bind(
-                Bindings.when(shape.pressedProperty()).then(Color.YELLOW).otherwise(Color.color(0.1, 0.05, 0.0, 0.75))
+                Bindings.when(shape.pressedProperty()).then(Color.BLUE).otherwise(Color.color(0.1, 0.05, 0.0, 0.75))
         );
 
         shape.setOnMouseClicked(e -> fireResume());
 
         shape2.setStrokeWidth(2.5);
         shape2.strokeProperty().bind(
-                Bindings.when(shape2.hoverProperty()).then(Color.YELLOW).otherwise(Color.BLACK)
+                Bindings.when(shape2.hoverProperty()).then(Color.BLUE).otherwise(Color.BLACK)
         );
 
         shape2.fillProperty().bind(
-                Bindings.when(shape2.pressedProperty()).then(Color.YELLOW).otherwise(Color.color(0.1, 0.05, 0.0, 0.75))
+                Bindings.when(shape2.pressedProperty()).then(Color.BLUE).otherwise(Color.color(0.1, 0.05, 0.0, 0.75))
         );
-        shape2.setOnMouseClicked(e -> fireExit());
+        shape2.setOnMouseClicked(e -> fireExitToMainMenu());
 
         var shape3 = new Rectangle(SIZE*2, SIZE / 2);
         shape3.setStrokeWidth(2.5);
         shape3.strokeProperty().bind(
-                Bindings.when(shape3.hoverProperty()).then(Color.YELLOW).otherwise(Color.BLACK)
+                Bindings.when(shape3.hoverProperty()).then(Color.BLUE).otherwise(Color.BLACK)
         );
 
         shape3.fillProperty().bind(
-                Bindings.when(shape3.pressedProperty()).then(Color.YELLOW).otherwise(Color.color(0.1, 0.05, 0.0, 0.75))
+                Bindings.when(shape3.pressedProperty()).then(Color.BLUE).otherwise(Color.color(0.1, 0.05, 0.0, 0.75))
         );
 
         shape3.setTranslateY(SIZE);
@@ -72,8 +72,8 @@ public class PauseMenu extends FXGLMenu {
         textResume.setTranslateY(100);
         textResume.setMouseTransparent(true);
 
-        Text textExit = FXGL.getUIFactoryService().newText("EXIT", Color.WHITE, FontType.GAME, 24.0);
-        textExit.setTranslateX(200);
+        Text textExit = FXGL.getUIFactoryService().newText("MAIN MENU", Color.WHITE, FontType.GAME, 24.0);
+        textExit.setTranslateX(165);
         textExit.setTranslateY(100);
         textExit.setMouseTransparent(true);
 

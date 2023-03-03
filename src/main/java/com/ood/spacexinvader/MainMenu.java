@@ -8,17 +8,24 @@ import com.almasb.fxgl.core.util.EmptyRunnable;
 import com.almasb.fxgl.dsl.FXGL;
 import javafx.geometry.Point2D;
 import javafx.scene.control.Button;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Shape;
 import javafx.scene.control.Label;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 
 public class MainMenu extends FXGLMenu {
 
+    private static final int size = 150;
+
     private Animation<?> animation;
     public MainMenu() {
         super(MenuType.MAIN_MENU);
 
-        Label welcome = new Label("Welcome to our game");
+        Text welcome = new Text("Welcome to our game");
         welcome.setTranslateX(165);
         welcome.setTranslateY(225);
 
