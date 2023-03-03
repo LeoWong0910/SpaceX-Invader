@@ -13,9 +13,11 @@ public class GameConfig {
     public static LocalTimer shootTimer;
     public static Duration shootDelay = Duration.seconds(0.25);
     public static final int PLAYER_SIZE = 100;
+    public static final int ENEMY_SIZE = 128;
 
     public static boolean isMoving;
     //follow by the FXGL structure.
     public static final String ICON = "icon/spacex-invader-favicon-black.png";
+    public static final String ALIEN_IMAGE = "enemy/alien.png";
     public static final String PLAYER_IMAGE = "player/SpaceX.png";
 }
