@@ -30,22 +30,18 @@ public class MainMenu extends FXGLMenu {
 
         Text txtWelcome = FXGL.getUIFactoryService().newText("Welcome to our game", Color.WHITE, FontType.GAME, 27.0);
 
-        Button btnNewStart = new Button("Start new game");
+        Button btnNewStart = new Button("Start Game");
         btnNewStart.setTranslateY(40);
         btnNewStart.setOnAction(e -> fireNewGame());
 
-        Button btnContinue = new Button("Continue");
-        btnContinue.setTranslateY(70);
-        btnContinue.setOnAction(e -> fireContinue());
-
         Button btnExit = new Button("Exit");
-        btnExit.setTranslateY(100);
+        btnExit.setTranslateY(70);
         btnExit.setOnAction(e -> fireExit());
 
         Rectangle bg = new Rectangle(WIDTH, HEIGHT);
         bg.setFill(new ImagePattern(BI));
 
-        getContentRoot().getChildren().addAll(new StackPane(bg, txtWelcome, btnNewStart, btnContinue, btnExit));
+        getContentRoot().getChildren().addAll(new StackPane(bg, txtWelcome, btnNewStart, btnExit));
         getContentRoot().setScaleY(0);
 
         animation = FXGL.animationBuilder()
