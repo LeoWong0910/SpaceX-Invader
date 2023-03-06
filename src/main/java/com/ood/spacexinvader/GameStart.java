@@ -1,6 +1,8 @@
 package com.ood.spacexinvader;
 
+import com.almasb.fxgl.app.FXGLApplication;
 import com.almasb.fxgl.app.GameApplication;
+import com.almasb.fxgl.app.GameController;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.app.scene.FXGLMenu;
 import com.almasb.fxgl.app.scene.SceneFactory;
@@ -59,7 +61,19 @@ public class GameStart extends GameApplication {
                 .viewWithBBox(PLAYER_IMAGE)
                 .with(new CollidableComponent(true))
                 .buildAndAttach();
-    }
+
+        FXGL.getWorldProperties().<Integer>addListener("hp", (prev, now) -> {
+            if (now == 0) {
+                FXGL.showConfirm("Game Over, Continue?", yes -> {
+                    if (yes) {
+                        FXGL.getGameController().startNewGame();
+                    } else {
+                        FXGL.getGameController().exit();
+                    }
+                });
+            }
+        });
+        }
 
     @Override
     protected void initPhysics() {
