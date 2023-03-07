@@ -16,6 +16,8 @@ public class GameConfig {
     public static final int PLAYER_SIZE = 100;
     public static final int ENEMY_SIZE = 128;
 
+    public static final int ENEMY_AMOUNT = 30;
+
     public static boolean isMoving;
     //follow by the FXGL structure.
     public static final String ICON = "icon/spacex-invader-favicon-black.png";

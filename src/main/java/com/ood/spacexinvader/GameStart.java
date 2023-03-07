@@ -52,7 +52,7 @@ public class GameStart extends GameApplication {
     protected void initGame() {
         shootTimer = FXGL.newLocalTimer();
         //Spawn 30 Enemy
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < FXGL.getWorldProperties().getInt("enemy_amount"); i++) {
             Enemy();
         }
         player = FXGL.entityBuilder()
@@ -68,7 +68,18 @@ public class GameStart extends GameApplication {
                     if (yes) {
                         FXGL.getGameController().startNewGame();
                     } else {
-                        FXGL.getGameController().exit();
+                        FXGL.getGameController().gotoMainMenu();
+                    }
+                });
+            }
+        });
+        FXGL.getWorldProperties().<Integer>addListener("enemy_amount", (prev, now) -> {
+            if (now == 0) {
+                FXGL.showConfirm("You won! Start again?", yes -> {
+                    if (yes) {
+                        FXGL.getGameController().startNewGame();
+                    } else {
+                        FXGL.getGameController().gotoMainMenu();
                     }
                 });
             }
@@ -84,6 +95,7 @@ public class GameStart extends GameApplication {
                         bullet.removeFromWorld();
                         enemy.removeFromWorld();
                         FXGL.getWorldProperties().increment("score",+1);
+                        FXGL.getWorldProperties().increment("enemy_amount", -1);
                     }
                 });
         FXGL.getPhysicsWorld().addCollisionHandler(
@@ -177,6 +189,7 @@ public class GameStart extends GameApplication {
     protected void initGameVars(Map<String, Object> vars) {
         vars.put("score",0);
         vars.put("hp",3);
+        vars.put("enemy_amount", ENEMY_AMOUNT);
     }
 
     @Override
