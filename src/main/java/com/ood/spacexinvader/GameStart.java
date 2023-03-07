@@ -34,7 +34,6 @@ public class GameStart extends GameApplication {
         settings.setMainMenuEnabled(true);
         settings.setCloseConfirmation(true);
         settings.setSceneFactory(new SceneFactory() {
-            @Override
             public FXGLMenu newMainMenu() {
                 return new MainMenu();
             }
