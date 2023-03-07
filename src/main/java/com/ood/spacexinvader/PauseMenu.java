@@ -64,6 +64,7 @@ public class PauseMenu extends FXGLMenu {
         shape3.fillProperty().bind(
                 Bindings.when(shape3.pressedProperty()).then(Color.BLUE).otherwise(Color.color(0.1, 0.05, 0.0, 0.75))
         );
+        shape3.setOnMouseClicked(e -> fireNewGame());
 
         shape3.setTranslateY(SIZE);
 
@@ -77,7 +78,7 @@ public class PauseMenu extends FXGLMenu {
         textExit.setTranslateY(100);
         textExit.setMouseTransparent(true);
 
-        Text textOptions = FXGL.getUIFactoryService().newText("OPTIONS", Color.WHITE, FontType.GAME, 24.0);
+        Text textOptions = FXGL.getUIFactoryService().newText("RESTART", Color.WHITE, FontType.GAME, 24.0);
         textOptions.setTranslateX(110);
         textOptions.setTranslateY(195);
         textOptions.setMouseTransparent(true);
