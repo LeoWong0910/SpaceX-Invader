@@ -64,7 +64,7 @@ public class GameStart extends GameApplication {
 
         FXGL.getWorldProperties().<Integer>addListener("hp", (prev, now) -> {
             if (now == 0) {
-                FXGL.showConfirm("Game Over, Continue?", yes -> {
+                FXGL.showConfirm("Game Over, Start Again?", yes -> {
                     if (yes) {
                         FXGL.getGameController().startNewGame();
                     } else {
