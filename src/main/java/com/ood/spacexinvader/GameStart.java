@@ -1,8 +1,6 @@
 package com.ood.spacexinvader;
 
-import com.almasb.fxgl.app.FXGLApplication;
 import com.almasb.fxgl.app.GameApplication;
-import com.almasb.fxgl.app.GameController;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.app.scene.FXGLMenu;
 import com.almasb.fxgl.app.scene.SceneFactory;
@@ -35,7 +33,6 @@ public class GameStart extends GameApplication {
         settings.setMainMenuEnabled(true);
         settings.setCloseConfirmation(true);
         settings.setSceneFactory(new SceneFactory() {
-            @Override
             public FXGLMenu newMainMenu() {
                 return new MainMenu();
             }
