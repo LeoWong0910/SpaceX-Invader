@@ -22,9 +22,8 @@ import static com.ood.spacexinvader.GameConfig.WIDTH;
 
 public class MainMenu extends FXGLMenu {
 
-    private static final int size = 150;
     Image BI = new Image("assets/textures/background/bg.jpeg");
-    private Animation<?> animation;
+    private final Animation<?> animation;
 
     public MainMenu() {
         super(MenuType.MAIN_MENU);
