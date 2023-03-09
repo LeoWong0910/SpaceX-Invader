@@ -38,12 +38,11 @@ application {
 }
 
 javafx {
-    version = '17.0.2'
-    modules = ['javafx.controls', 'javafx.graphics', 'javafx.fxml', 'javafx.media']
+    version = "17.0.2"
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.swing', 'javafx.media' ]
 }
 
 dependencies {
-
     implementation('com.github.almasb:fxgl:17.2')
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
