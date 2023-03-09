@@ -7,7 +7,7 @@ public class GameConfig {
     public static final String Title= "SpaceX Invader";
     public static final int HEIGHT = 600;
     public static final int WIDTH = 450;
-    public static final double SPEED = 5f;
+    public static final double SPEED = 3f;
     public static final double BULLET_SPEED = 300f;
     public static final double ENEMY_SPEED = 20f;
     public static final int BULLET_SIZE = 6;

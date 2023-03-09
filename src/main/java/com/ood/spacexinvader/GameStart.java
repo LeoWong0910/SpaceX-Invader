@@ -1,8 +1,6 @@
 package com.ood.spacexinvader;
 
-import com.almasb.fxgl.app.FXGLApplication;
 import com.almasb.fxgl.app.GameApplication;
-import com.almasb.fxgl.app.GameController;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.app.scene.FXGLMenu;
 import com.almasb.fxgl.app.scene.SceneFactory;
@@ -57,7 +55,7 @@ public class GameStart extends GameApplication {
         }
         player = FXGL.entityBuilder()
                 .type(EntityType.PLAYER)
-                .at((WIDTH - PLAYER_SIZE) / 2  , HEIGHT - PLAYER_SIZE )
+                .at(((float)WIDTH - PLAYER_SIZE) / 2  , HEIGHT - PLAYER_SIZE )
                 .viewWithBBox(PLAYER_IMAGE)
                 .with(new CollidableComponent(true))
                 .buildAndAttach();
@@ -208,7 +206,6 @@ public class GameStart extends GameApplication {
                 .collidable()
                 .buildAndAttach();
     }
-
     public static void main(String[] args) {
         launch(args);
     }
