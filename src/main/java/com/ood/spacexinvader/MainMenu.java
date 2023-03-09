@@ -1,4 +1,5 @@
 package com.ood.spacexinvader;
+
 import com.almasb.fxgl.animation.Animation;
 import com.almasb.fxgl.animation.Interpolators;
 import com.almasb.fxgl.app.scene.FXGLMenu;
